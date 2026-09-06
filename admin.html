@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Enquiry Desk | Zarafé Hospitality</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#0f3d2e;--green-d:#082a1f;--ivory:#f6f1e8;--paper:#fffdf9;--brass:#b8894a;--brass-d:#9a6f36;--ink:#16211c;--muted:#5c6b63;--line:#e3ddd1;--wa:#128c4a}
+*{box-sizing:border-box}body{margin:0;font-family:Manrope,system-ui,sans-serif;background:var(--ivory);color:var(--ink);font-size:15px}
+h1,h2{font-family:"Cormorant Garamond",serif;color:var(--green-d);margin:0}
+.top{background:var(--green-d);color:#fff;padding:.8rem 1.2rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.top h1{color:#fff;font-size:1.5rem}.top h1 span{color:var(--brass)}
+.top .sp{flex:1}.top button{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:.4rem .9rem;cursor:pointer;font:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:1.2rem}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:1.2rem}
+.gate{max-width:420px;margin:4rem auto}
+.gate input{width:100%;font:inherit;font-size:1.1rem;padding:.8rem;border:1.5px solid var(--line);border-radius:8px;margin:.6rem 0}
+.btn{background:var(--brass);color:#fff;border:0;border-radius:999px;padding:.7rem 1.3rem;font:inherit;font-weight:700;cursor:pointer}
+.btn.o{background:transparent;border:1.5px solid var(--green);color:var(--green)}
+.btn.wa{background:var(--wa)}
+.err{color:#b3261e;font-weight:600;min-height:1.2em}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.8rem;margin-bottom:1rem}
+.tile{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.9rem 1rem}
+.tile b{display:block;font-family:"Cormorant Garamond",serif;font-size:2rem;color:var(--green-d);line-height:1}
+.tile span{font-size:.8rem;color:var(--muted)}
+.bar{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.6rem 0 1rem}
+.tab{border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:.4rem .9rem;font:inherit;font-weight:600;cursor:pointer}
+.tab.on{background:var(--green);color:#fff;border-color:var(--green)}
+.bar input[type=search]{font:inherit;padding:.45rem .8rem;border:1.5px solid var(--line);border-radius:999px;min-width:220px}
+table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{padding:.6rem .7rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.92rem}
+th{background:#f1ece2;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass-d)}
+tr:hover td{background:#fbf8f2}
+.st{display:inline-block;padding:.15rem .55rem;border-radius:999px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.st-new{background:#fde8c8;color:#8a5a12}.st-contacted{background:#e3ecf9;color:#24508f}.st-quoted{background:#efe4f9;color:#5b2d8f}.st-confirmed{background:#dcf2e4;color:#166534}.st-completed{background:#e8e8e8;color:#444}.st-lost{background:#fbe1e1;color:#8f1d1d}.st-spam{background:#eee;color:#777}
+.row-btn{background:none;border:1px solid var(--line);border-radius:6px;padding:.25rem .5rem;cursor:pointer;font:inherit;font-size:.82rem}
+.mut{color:var(--muted);font-size:.82rem}
+.drawer{position:fixed;inset:0;background:rgba(8,42,31,.45);display:none;align-items:flex-start;justify-content:flex-end;z-index:20}
+.drawer.on{display:flex}
+.panel{background:var(--paper);width:min(560px,100%);height:100%;overflow:auto;padding:1.4rem}
+.panel h2{font-size:1.6rem;margin-bottom:.2rem}
+.panel dl{display:grid;grid-template-columns:120px 1fr;gap:.35rem .8rem;margin:1rem 0}
+.panel dt{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass-d);font-weight:700;padding-top:.15rem}
+.panel dd{margin:0}
+.panel label{display:block;font-weight:600;font-size:.85rem;margin:.8rem 0 .25rem}
+.panel select,.panel input,.panel textarea{width:100%;font:inherit;padding:.55rem .7rem;border:1.5px solid var(--line);border-radius:8px}
+.panel textarea{min-height:110px}
+.acts{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+.acts a{text-decoration:none}
+@media (max-width:760px){table,thead,tbody,tr,td,th{display:block}thead{display:none}tr{border-bottom:6px solid var(--ivory)}td{border:0;padding:.25rem .8rem}td::before{content:attr(data-l);display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--brass-d);font-weight:700}}
+</style>
+</head>
+<body>
+<div class="top"><h1>Zaraf<span>é</span> · Enquiry Desk</h1><span class="sp"></span><button id="csv" hidden>Export CSV</button><button id="chpw" hidden>Change passcode</button><button id="out" hidden>Sign out</button></div>
+
+<div class="wrap">
+  <div id="gate" class="card gate">
+    <h2 id="gate-h">Enter passcode</h2>
+    <p id="gate-p" class="mut">This desk shows every enquiry from zarafehospitality.com.</p>
+    <input id="pw" type="password" placeholder="Passcode" autocomplete="current-password">
+    <input id="pw2" type="password" placeholder="Repeat passcode" hidden autocomplete="new-password">
+    <p class="err" id="gate-err"></p>
+    <button class="btn" id="go">Open desk</button>
+  </div>
+
+  <div id="desk" hidden>
+    <div class="tiles" id="tiles"></div>
+    <div class="bar">
+      <button class="tab on" data-f="all">All</button>
+      <button class="tab" data-f="new">New</button>
+      <button class="tab" data-f="open">In progress</button>
+      <button class="tab" data-f="confirmed">Confirmed</button>
+      <button class="tab" data-f="upcoming">Upcoming events</button>
+      <button class="tab" data-f="lost">Lost / spam</button>
+      <input type="search" id="q" placeholder="Search name, organisation, phone">
+      <span class="sp"></span>
+      <button class="btn o" id="refresh">Refresh</button>
+    </div>
+    <table><thead><tr><th>Received</th><th>Who</th><th>Event</th><th>Guests</th><th>Status</th><th>Follow up</th><th></th></tr></thead><tbody id="rows"></tbody></table>
+    <p class="mut" id="count"></p>
+  </div>
+</div>
+
+<div class="drawer" id="drawer"><div class="panel" id="panel"></div></div>
+
+<script>
+(function(){
+  var pass = sessionStorage.getItem('z_pass') || '';
+  var all = [], filter = 'all', q = '';
+  var $ = function(s){return document.querySelector(s)};
+  function api(action, body){
+    return fetch('https://xhcpbdhdasajtlfevkko.supabase.co/functions/v1/admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.assign({action:action,passcode:pass},body||{}))})
+      .then(function(r){return r.json().then(function(j){ if(!r.ok) throw new Error(j.error||'Error'); return j; });});
+  }
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]});}
+  function fmtDate(d){ if(!d) return ''; var x=new Date(d); return x.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}); }
+  function fmtDT(d){ var x=new Date(d); return x.toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}); }
+  function waLink(e){ var p=(e.phone||'').replace(/\D/g,''); var t='Hello '+(e.name||'').split(' ')[0]+', this is Zarafé Hospitality. Thank you for your enquiry for the '+e.event_type+' on '+fmtDate(e.event_date)+' for about '+e.guests+' guests. May I send you a menu and per-head quote here?'; return 'https://wa.me/'+p+'?text='+encodeURIComponent(t); }
+
+  // Gate
+  api('status').then(function(s){
+    if(!s.has_passcode){ $('#gate-h').textContent='Set a passcode'; $('#gate-p').textContent='First visit. Choose a passcode for the desk (at least 6 characters). Share it only with people who should see enquiries.'; $('#pw2').hidden=false; $('#go').textContent='Set passcode'; $('#go').dataset.mode='set'; }
+    else if(pass){ open(); }
+  }).catch(function(e){ $('#gate-err').textContent=e.message; });
+
+  $('#go').addEventListener('click', function(){
+    var p=$('#pw').value; $('#gate-err').textContent='';
+    if($('#go').dataset.mode==='set'){
+      if(p.length<6) return $('#gate-err').textContent='At least 6 characters.';
+      if(p!==$('#pw2').value) return $('#gate-err').textContent='Passcodes do not match.';
+      fetch('https://xhcpbdhdasajtlfevkko.supabase.co/functions/v1/admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'set_passcode',passcode:p})}).then(function(r){return r.json()}).then(function(j){ if(j.error) throw new Error(j.error); pass=p; sessionStorage.setItem('z_pass',p); open(); }).catch(function(e){$('#gate-err').textContent=e.message;});
+    } else {
+      pass=p; api('login').then(function(){ sessionStorage.setItem('z_pass',p); open(); }).catch(function(e){ pass=''; $('#gate-err').textContent=e.message; });
+    }
+  });
+  $('#pw').addEventListener('keydown',function(e){ if(e.key==='Enter') $('#go').click(); });
+
+  function open(){ $('#gate').hidden=true; $('#desk').hidden=false; ['#csv','#chpw','#out'].forEach(function(s){$(s).hidden=false;}); load(); }
+  $('#out').addEventListener('click',function(){ sessionStorage.removeItem('z_pass'); location.reload(); });
+  $('#chpw').addEventListener('click',function(){ var n=prompt('New passcode (at least 6 characters):'); if(!n) return; api('change_passcode',{new_passcode:n}).then(function(){ pass=n; sessionStorage.setItem('z_pass',n); alert('Passcode changed.'); }).catch(function(e){alert(e.message)}); });
+  $('#refresh').addEventListener('click',load);
+  document.querySelectorAll('.tab').forEach(function(t){ t.addEventListener('click',function(){ document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')}); t.classList.add('on'); filter=t.dataset.f; render(); }); });
+  $('#q').addEventListener('input',function(){ q=this.value.toLowerCase(); render(); });
+
+  function load(){
+    api('summary').then(function(s){
+      $('#tiles').innerHTML = [['New',s.new_count],['In progress',s.open_count],['Confirmed',s.confirmed_count],['Last 30 days',s.last_30_days],['Guests upcoming',s.upcoming_guests],['Confirmed value ₹',Number(s.confirmed_value||0).toLocaleString('en-IN')]]
+        .map(function(t){return '<div class="tile"><b>'+t[1]+'</b><span>'+t[0]+'</span></div>'}).join('');
+    });
+    api('list').then(function(rows){ all=rows; render(); }).catch(function(e){ alert(e.message); });
+  }
+  function render(){
+    var today=new Date().toISOString().slice(0,10);
+    var rows=all.filter(function(e){
+      if(filter==='new') return e.status==='new';
+      if(filter==='open') return e.status==='contacted'||e.status==='quoted';
+      if(filter==='confirmed') return e.status==='confirmed';
+      if(filter==='upcoming') return e.event_date>=today && ['lost','spam','completed'].indexOf(e.status)<0;
+      if(filter==='lost') return e.status==='lost'||e.status==='spam';
+      return e.status!=='spam';
+    }).filter(function(e){ if(!q) return true; return (e.name+' '+e.organisation+' '+e.phone+' '+(e.venue||'')).toLowerCase().indexOf(q)>=0; });
+    if(filter==='upcoming') rows.sort(function(a,b){return a.event_date<b.event_date?-1:1});
+    $('#rows').innerHTML = rows.map(function(e){
+      var due = e.followup_on && e.followup_on<=today && ['new','contacted','quoted'].indexOf(e.status)>=0;
+      return '<tr data-id="'+e.id+'">'+
+        '<td data-l="Received">'+fmtDT(e.created_at)+'</td>'+
+        '<td data-l="Who"><b>'+esc(e.name)+'</b><br>'+esc(e.organisation)+'<br><span class="mut">'+esc(e.phone)+(e.email?' · '+esc(e.email):'')+'</span></td>'+
+        '<td data-l="Event">'+esc(e.event_type)+'<br><span class="mut">'+fmtDate(e.event_date)+(e.venue?' · '+esc(e.venue):'')+'</span><br><span class="mut">'+esc((e.meals||[]).join(', '))+'</span></td>'+
+        '<td data-l="Guests">'+e.guests+'</td>'+
+        '<td data-l="Status"><span class="st st-'+e.status+'">'+e.status+'</span>'+(e.quote_amount?'<br><span class="mut">₹'+Number(e.quote_amount).toLocaleString('en-IN')+'</span>':'')+'</td>'+
+        '<td data-l="Follow up">'+(e.followup_on?(due?'<b style="color:#b3261e">':'')+fmtDate(e.followup_on)+(due?'</b>':''):'')+'</td>'+
+        '<td><button class="row-btn" data-open="'+e.id+'">Open</button></td></tr>';
+    }).join('') || '<tr><td colspan="7" class="mut">No enquiries here yet.</td></tr>';
+    $('#count').textContent = rows.length+' of '+all.length+' enquiries';
+    document.querySelectorAll('[data-open]').forEach(function(b){ b.addEventListener('click',function(){ show(b.dataset.open); }); });
+  }
+  function show(id){
+    var e=all.find(function(x){return x.id===id}); if(!e) return;
+    $('#panel').innerHTML = '<button class="row-btn" id="close">Close</button>'+
+      '<h2>'+esc(e.name)+'</h2><p class="mut">'+esc(e.organisation)+' · received '+fmtDT(e.created_at)+'</p>'+
+      '<div class="acts"><a class="btn wa" target="_blank" rel="noopener" href="'+waLink(e)+'">WhatsApp</a><a class="btn o" href="tel:'+esc(e.phone)+'">Call</a>'+(e.email?'<a class="btn o" href="mailto:'+esc(e.email)+'">Email</a>':'')+'</div>'+
+      '<dl><dt>Phone</dt><dd>'+esc(e.phone)+'</dd><dt>Email</dt><dd>'+esc(e.email||'')+'</dd><dt>Event</dt><dd>'+esc(e.event_type)+'</dd><dt>Date</dt><dd>'+fmtDate(e.event_date)+'</dd><dt>Guests</dt><dd>'+e.guests+'</dd><dt>Venue</dt><dd>'+esc(e.venue||'')+'</dd><dt>Meals</dt><dd>'+esc((e.meals||[]).join(', '))+'</dd><dt>Budget</dt><dd>'+esc(e.budget_band||'')+'</dd><dt>Message</dt><dd>'+esc(e.message||'')+'</dd><dt>Source</dt><dd>'+esc(e.source_path||'')+' '+esc(JSON.stringify(e.utm||{}))+'</dd></dl>'+
+      '<label>Status</label><select id="f-status">'+['new','contacted','quoted','confirmed','completed','lost','spam'].map(function(s){return '<option'+(s===e.status?' selected':'')+'>'+s+'</option>'}).join('')+'</select>'+
+      '<label>Quote amount (₹, total)</label><input id="f-quote" type="number" value="'+(e.quote_amount||'')+'">'+
+      '<label>Follow up on</label><input id="f-fu" type="date" value="'+(e.followup_on||'')+'">'+
+      '<label>Notes</label><textarea id="f-notes">'+esc(e.notes||'')+'</textarea>'+
+      '<div class="acts"><button class="btn" id="save">Save</button><button class="row-btn" id="del">Delete</button></div><p class="err" id="perr"></p>';
+    $('#drawer').classList.add('on');
+    $('#close').onclick=function(){ $('#drawer').classList.remove('on'); };
+    $('#save').onclick=function(){
+      api('update',{id:id,status:$('#f-status').value,quote_amount:$('#f-quote').value,followup_on:$('#f-fu').value,notes:$('#f-notes').value})
+        .then(function(){ $('#drawer').classList.remove('on'); load(); }).catch(function(er){ $('#perr').textContent=er.message; });
+    };
+    $('#del').onclick=function(){ if(confirm('Delete this enquiry permanently?')) api('delete',{id:id}).then(function(){ $('#drawer').classList.remove('on'); load(); }); };
+  }
+  $('#drawer').addEventListener('click',function(e){ if(e.target===this) this.classList.remove('on'); });
+  $('#csv').addEventListener('click',function(){
+    var cols=['created_at','name','organisation','phone','email','event_type','event_date','guests','venue','meals','budget_band','message','status','quote_amount','followup_on','notes','source_path'];
+    var csv=[cols.join(',')].concat(all.map(function(e){ return cols.map(function(c){ var v=e[c]; if(Array.isArray(v)) v=v.join('; '); v=v==null?'':String(v); return '"'+v.replace(/"/g,'""')+'"'; }).join(','); })).join('\n');
+    var a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'})); a.download='zarafe-enquiries.csv'; a.click();
+  });
+})();
+</script>
+</body>
+</html>
