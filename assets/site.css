@@ -208,7 +208,7 @@ p{margin:0 0 1em}
 .ev:first-child{border-top:0;padding-top:0}
 .ev-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
 .ev-head p{color:var(--muted);margin:0}
-.gal3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.2rem}
+.gal3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1.2rem}
 .gal3 figure{margin:0}
 .gal3 img{border-radius:var(--r-s);aspect-ratio:16/10;object-fit:cover;width:100%}
 .gal3 figcaption{font-size:.85rem;color:var(--muted);margin-top:.45rem}
