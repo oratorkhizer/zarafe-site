@@ -260,3 +260,5 @@ p{margin:0 0 1em}
 .prose p{max-width:70ch}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+/* identity pass 2 */
+.eyebrow{font-family:var(--ff-d);font-style:italic;font-weight:600;letter-spacing:0;text-transform:none;font-size:1.2rem}
