@@ -26,6 +26,7 @@
   var f = document.getElementById('enquiry');
   if (!f) return;
   var msg = f.querySelector('.form-msg'), btn = f.querySelector('button[type=submit]');
+  var guard = window.FormGuard ? FormGuard.create(document.getElementById('enquiry-cf')) : null;
   var dateEl = f.querySelector('[name=event_date]');
   if (dateEl) { var t = new Date(); t.setDate(t.getDate() + 1); dateEl.min = t.toISOString().slice(0, 10); }
 
@@ -47,17 +48,24 @@
     try { data.utm = JSON.parse(sessionStorage.getItem('z_utm') || '{}'); } catch (e) { data.utm = {}; }
 
     btn.disabled = true; btn.textContent = 'Sending…';
-    fetch('https://xhcpbdhdasajtlfevkko.supabase.co/functions/v1/enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
-      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+    if (guard) data.ms = guard.elapsed();
+    (guard ? guard.token() : Promise.resolve(''))
+      .then(function (token) {
+        data.turnstile = token;
+        return fetch('https://xhcpbdhdasajtlfevkko.supabase.co/functions/v1/enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      })
+      .then(function (r) { if (guard) guard.reset(); return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (res) {
+        if (!res.ok && res.j.code === 'human_check') { var he = new Error(res.j.error); he.human = true; throw he; }
         if (!res.ok) throw new Error(res.j.error || 'Could not send');
         track('enquiry_submitted', { event_type: data.event_type, guests: Number(data.guests) || 0 });
         location.href = '/thanks';
       })
       .catch(function (e) {
+        if (guard) guard.reset();
         btn.disabled = false; btn.textContent = 'Send enquiry';
         msg.className = 'form-msg err';
-        msg.textContent = 'Sorry, that did not go through (' + e.message + '). Please WhatsApp us on +91 88010 91203.';
+        msg.textContent = e.human ? e.message : 'Sorry, that did not go through (' + e.message + '). Please WhatsApp us on +91 88010 91203.';
       });
   });
 })();
