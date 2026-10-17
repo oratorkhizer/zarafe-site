@@ -12,7 +12,7 @@
      ... after:      guard.reset();
 */
 (function () {
-  var TURNSTILE_SITEKEY = "";
+  var TURNSTILE_SITEKEY = "0x4AAAAAAFZKPs2dJMNMwtoC";
   var SRC = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
   var loader = null;
 
