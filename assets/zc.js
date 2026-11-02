@@ -10,7 +10,7 @@
   var stage = el.querySelector('.zc-stage'), frame = el.querySelector('.zc-frame'), shadow = el.querySelector('.zc-shadow');
   var dish = el.querySelector('.zc-dish'), under = el.querySelector('.zc-under'), rim = el.querySelector('.zc-rim'), copy = el.querySelector('.zc-copy');
   var hdr = document.querySelector('.hdr');
-  var FU = 0.40, FV = 0.31; // the biryani platter inside the photo, as fractions of width and height
+  var FU = 0.51, FV = 0.50, FR = 0.27; // the handi inside the photo: centre and radius, as fractions of the photo width/height
 
   var clamp = function (x, a, b) { return x < a ? a : x > b ? b : x; };
   var seg = function (p, a, b) { return clamp((p - a) / (b - a), 0, 1); };
@@ -26,8 +26,8 @@
     var stacked = W < 900;
     var fw, fx, fy, cx, cy, cw;
     if (stacked) {
-      fw = Math.min(W - 2 * g, (H * 0.4) * 4 / 3, 620);
-      fx = (W - fw) / 2; fy = 58;
+      fw = Math.min(W - 2 * g, (H * (H < 640 ? 0.33 : 0.4)) * 4 / 3, 620);
+      fx = (W - fw) / 2; fy = H < 640 ? 52 : 58;
       cw = Math.min(W - 2 * g, 560); cx = (W - cw) / 2; cy = fy + fw * .75 + 18;
     } else {
       fw = Math.min(W * 0.5, (H - 100) * 4 / 3, 760);
@@ -84,7 +84,7 @@
 
     // 3. the dish opens out into the full photo
     var e = ease(seg(p, .5, .78));
-    var z0 = 1.5, z = lerp(z0, 1, e);
+    var z0 = (s * .5 * .97) / (FR * L.fw), z = lerp(z0, 1, e);   // start scale: the handi just fills the plate
     var grow = out(seg(p, .1, .34));
     var R = s * lerp(.4, .5, grow) + s * .06 * e;             // radius on screen before it opens out
     var ccx = L.dx, ccy = L.dy + s * .04;                       // dish centre on screen

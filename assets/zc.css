@@ -83,7 +83,7 @@
   .zc-note{margin-top:.6rem!important}
   .zc-frame figcaption{font-size:.72rem;left:8px;bottom:8px;max-width:calc(100% - 16px)}
 }
-@media (max-width:760px) and (max-height:720px){.zc-copy p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}}
+@media (max-width:760px) and (max-height:720px){.zc-copy h2{font-size:1.5rem}.zc-copy p:not(.eyebrow){font-size:.9rem}.zc-copy .eyebrow{margin-bottom:.3rem}}
 
 /* reduced motion: a still, readable version */
 .zc.zc-flat{height:auto}
