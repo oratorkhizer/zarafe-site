@@ -1,0 +1,98 @@
+/* The cloche lifts: scroll moment at the top of the home page. All classes use the zc- prefix. */
+.zc{position:relative;height:560vh;background:var(--ivory)}
+.zc-stage{position:sticky;top:var(--hdr,73px);height:calc(100vh - var(--hdr,73px));height:calc(100dvh - var(--hdr,73px));overflow:hidden;
+  background:#efe7da url("/assets/zc/linen-1600.webp") center/cover no-repeat}
+@media (max-width:760px){.zc-stage{background-image:url("/assets/zc/linen-800.webp")}}
+.zc-stage::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 70% 60% at 50% 55%,rgba(246,241,232,.25),rgba(246,241,232,.55) 60%,rgba(74,44,35,.28) 100%),
+  linear-gradient(180deg,rgba(246,241,232,.65),rgba(246,241,232,0) 30%,rgba(216,164,143,.12))}
+.zc-skip{position:absolute;right:16px;top:14px;z-index:8;font:700 .78rem/1 var(--ff-b);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--green);background:rgba(255,253,249,.8);border:1px solid var(--line);border-radius:999px;padding:.55rem .9rem}
+.zc-skip:hover{background:#fff;text-decoration:none}
+
+/* opening title */
+.zc-title{position:absolute;left:0;right:0;top:clamp(18px,6vh,64px);text-align:center;z-index:4;padding:0 16px;opacity:var(--t,1);pointer-events:none}
+.zc-title .eyebrow{margin-bottom:.6rem}
+.zc-title h2{font-size:clamp(2.3rem,5vw,3.9rem);margin:0 0 .35rem}
+.zc-title p:not(.eyebrow){margin:0;color:var(--muted);font-size:1.02rem}
+.zc-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:4;opacity:var(--hint,1);pointer-events:none;
+  font:700 .74rem/1 var(--ff-b);letter-spacing:.16em;text-transform:uppercase;color:var(--brass-d);display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.zc-hint::after{content:"";width:1px;height:34px;background:linear-gradient(var(--brass-d),transparent)}
+
+/* the real photo frame, clipped to a round dish at first */
+.zc-frame{position:absolute;left:0;top:0;width:var(--fw);height:calc(var(--fw) * .75);margin:0;z-index:2;will-change:transform;
+  clip-path:inset(var(--it,0px) var(--ir,0px) var(--ib,0px) var(--il,0px) round var(--rr,14px));
+  -webkit-clip-path:inset(var(--it,0px) var(--ir,0px) var(--ib,0px) var(--il,0px) round var(--rr,14px));
+  opacity:var(--fo,1)}
+.zc-frame img{width:100%;height:100%;object-fit:cover;display:block;border-radius:0}
+.zc-frame figcaption{position:absolute;left:12px;bottom:12px;background:rgba(52,30,23,.88);color:#fff;font-size:.8rem;font-weight:600;
+  padding:.5rem .85rem;border-radius:999px;max-width:calc(100% - 24px);opacity:var(--cap,0);line-height:1.3}
+.zc-shadow{position:absolute;left:0;top:0;z-index:1;border-radius:14px;box-shadow:0 24px 60px rgba(74,44,35,.28);opacity:var(--cap,0);pointer-events:none}
+
+/* dish group: tray, plate rim, steam and the lid, centred on the dish */
+.zc-dish,.zc-under{position:absolute;left:0;top:0;width:0;height:0;z-index:3;transform:translate(var(--dx,50vw),var(--dy,50vh));pointer-events:none}
+.zc-under{z-index:1}
+.zc-dish > *,.zc-under > *{position:absolute}
+.zc-tray{width:calc(var(--s) * 1.7);height:calc(var(--s) * .34);left:calc(var(--s) * -.85);top:calc(var(--s) * .3);border-radius:50%;z-index:0;
+  background:radial-gradient(ellipse at 50% 35%,#fbfbfa 0%,#d9d9d6 38%,#9c9d9a 70%,#6f706d 100%);
+  box-shadow:0 18px 30px rgba(52,30,23,.32),inset 0 -6px 10px rgba(0,0,0,.18);opacity:var(--tray,1)}
+.zc-rim{width:calc(var(--s) * 1.14);height:calc(var(--s) * 1.14);left:calc(var(--s) * -.57);top:calc(var(--s) * -.57);border-radius:50%;
+  background:radial-gradient(circle,transparent 61%,#fffdf9 62%,#f1e6d2 80%,#d9cdb8 100%);box-shadow:0 10px 24px rgba(52,30,23,.22);
+  left:0;top:0}
+.zc-glow{width:calc(var(--s) * 1.6);height:calc(var(--s) * 1.2);left:calc(var(--s) * -.8);top:calc(var(--s) * -.7);border-radius:50%;
+  background:radial-gradient(ellipse,rgba(255,214,170,.55),rgba(255,214,170,0) 65%);opacity:var(--glow,0);mix-blend-mode:screen}
+.zc-steam{left:0;top:calc(var(--s) * -.35);width:0;height:0;opacity:var(--steam,0)}
+.zc-steam i{position:absolute;display:block;width:calc(var(--s) * .34);height:calc(var(--s) * .6);border-radius:50%;
+  background:radial-gradient(ellipse,rgba(255,255,255,.95) 0%,rgba(250,246,240,.75) 35%,rgba(150,120,100,.16) 55%,rgba(150,120,100,0) 70%);filter:blur(5px);
+  transform:translate(-50%,-50%) translate(var(--sx),calc(var(--rise,0px) * var(--k))) scale(var(--sc,1));opacity:.85}
+.zc-steam i:nth-child(1){--sx:calc(var(--s) * -.2);--k:1}
+.zc-steam i:nth-child(2){--sx:calc(var(--s) * .02);--k:1.35}
+.zc-steam i:nth-child(3){--sx:calc(var(--s) * .22);--k:.85}
+.zc-steam i:nth-child(4){--sx:calc(var(--s) * -.05);--k:1.7;opacity:.55}
+
+/* the silver lid, built in CSS */
+.zc-lid{width:calc(var(--s) * 1.34);height:calc(var(--s) * .98);left:calc(var(--s) * -.67);top:calc(var(--s) * -.52);z-index:2;
+  transform-origin:50% 100%;transform:translate(var(--lx,0px),var(--ly,0px)) rotate(var(--lr,0deg)) scale(var(--ls,1));opacity:var(--lo,1)}
+.zc-dome{position:absolute;left:0;right:0;bottom:calc(var(--s) * .05);top:calc(var(--s) * .1);border-radius:50% 50% 6% 6% / 100% 100% 8% 8%;
+  background:
+    radial-gradient(ellipse 22% 40% at 30% 30%,rgba(255,255,255,.95),rgba(255,255,255,0) 70%),
+    radial-gradient(ellipse 60% 50% at 70% 85%,rgba(216,164,143,.35),rgba(216,164,143,0) 70%),
+    linear-gradient(100deg,#7d7f7c 0%,#d8d9d6 18%,#f7f7f5 32%,#b9bab6 52%,#8b8c89 70%,#d3d4d0 86%,#6c6d6a 100%);
+  box-shadow:inset 0 -10px 18px rgba(0,0,0,.25),inset 0 6px 14px rgba(255,255,255,.5)}
+.zc-dome::after{content:"";position:absolute;left:8%;right:8%;bottom:16%;height:2px;border-radius:2px;background:rgba(255,255,255,.55);filter:blur(.5px)}
+.zc-band{position:absolute;left:-2%;right:-2%;bottom:0;height:calc(var(--s) * .08);border-radius:40%;
+  background:linear-gradient(180deg,#f2f2f0,#a5a6a2 55%,#6a6b68);box-shadow:0 4px 8px rgba(0,0,0,.25)}
+.zc-knob{position:absolute;left:50%;top:0;width:calc(var(--s) * .2);height:calc(var(--s) * .14);transform:translateX(-50%);
+  border-radius:50% 50% 30% 30%;background:radial-gradient(ellipse at 35% 30%,#ffffff,#c9cac6 45%,#7a7b78)}
+.zc-knob::after{content:"";position:absolute;left:30%;right:30%;bottom:-18%;height:30%;background:linear-gradient(90deg,#8a8b88,#e7e7e5,#8a8b88)}
+.zc-lidshadow{width:calc(var(--s) * 1.3);height:calc(var(--s) * .2);left:calc(var(--s) * -.65);top:calc(var(--s) * .38);border-radius:50%;
+  background:radial-gradient(ellipse,rgba(52,30,23,.45),rgba(52,30,23,0) 70%);opacity:var(--lso,1);z-index:1}
+
+/* closing copy and the enquiry call to action */
+.zc-copy{position:absolute;z-index:6;left:var(--cx,50%);top:var(--cy,50%);width:var(--cw,420px);opacity:var(--co,0);
+  transform:translateY(calc((1 - var(--co,0)) * 18px));visibility:var(--cv,hidden)}
+.zc-copy .eyebrow{margin-bottom:.6rem}
+.zc-copy h2{font-size:clamp(1.8rem,3.2vw,2.6rem);margin:0 0 .7rem}
+.zc-copy p:not(.eyebrow){color:var(--ink);margin:0 0 1.1rem}
+.zc-btns{display:flex;gap:.7rem;flex-wrap:wrap;position:relative;z-index:7}
+.zc-note{font-size:.88rem;color:var(--muted);margin:.9rem 0 0!important}
+@media (max-width:760px){
+  .zc-copy h2{font-size:1.7rem;margin-bottom:.5rem}
+  .zc-copy p{font-size:.95rem;line-height:1.5;margin-bottom:.9rem}
+  .zc-btns .btn{flex:1 1 140px;padding:.8rem 1rem}
+  .zc-note{margin-top:.6rem!important}
+  .zc-frame figcaption{font-size:.72rem;left:8px;bottom:8px;max-width:calc(100% - 16px)}
+}
+@media (max-width:760px) and (max-height:720px){.zc-copy p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}}
+
+/* reduced motion: a still, readable version */
+.zc.zc-flat{height:auto}
+.zc-flat .zc-stage{position:relative;top:0;height:auto;overflow:visible;padding:2.5rem 16px 3rem;display:grid;gap:1.6rem;justify-items:center}
+.zc-flat .zc-dish,.zc-flat .zc-under,.zc-flat .zc-hint,.zc-flat .zc-skip,.zc-flat .zc-shadow{display:none}
+.zc-flat .zc-title{position:relative;top:0;opacity:1}
+.zc-flat .zc-frame{position:relative;left:auto;top:auto;width:min(640px,100%);height:auto;aspect-ratio:4/3;transform:none;clip-path:none;-webkit-clip-path:none;
+  border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(74,44,35,.22)}
+.zc-flat .zc-frame figcaption{opacity:1}
+.zc-flat .zc-copy{position:relative;left:auto;top:auto;width:min(640px,100%);opacity:1;transform:none;visibility:visible}
+.zc + .hero{scroll-margin-top:73px}
+.zc-cta-on .wa-float{opacity:0;pointer-events:none;transition:opacity .2s}
