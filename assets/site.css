@@ -39,8 +39,8 @@ p{margin:0 0 1em}
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;font-size:.95rem;padding:.8rem 1.35rem;border-radius:999px;border:1.5px solid transparent;transition:.18s;cursor:pointer;line-height:1.1;text-decoration:none!important;font-family:var(--ff-b)}
 .btn-lg{padding:1rem 1.7rem;font-size:1.02rem}
-.btn-p{background:var(--brass);color:#fff}
-.btn-p:hover{background:var(--brass-d);transform:translateY(-1px)}
+.btn-p{background:var(--brass);color:var(--green-d)}
+.btn-p:hover{background:var(--green);color:#fff;transform:translateY(-1px)}
 .btn-o{border-color:var(--green);color:var(--green);background:transparent}
 .btn-o:hover{background:var(--green);color:#fff}
 .sec-green .btn-o{border-color:#fff;color:#fff}

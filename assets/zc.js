@@ -19,7 +19,7 @@
   el.addEventListener('click', function (e) {
     var a = e.target.closest ? e.target.closest('a,button') : null;
     if (!a || !el.contains(a)) return;
-    if (a.classList.contains('zc-skip')) { seenSet(true); track('skip'); return; }
+    if (a.classList.contains('zc-skip')) { seenSet(true); track('skip'); setTimeout(function () { try { history.replaceState(null, '', location.pathname + location.search); } catch (er) {} }, 0); return; }
     if (a.classList.contains('zc-replay')) return;
     var href = a.getAttribute('href') || '';
     track('cta', { label: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 40), href: href.split('?')[0] }, true);
