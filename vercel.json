@@ -1,6 +1,10 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/sbx/xhcpbdhdasajtlfevkko/:path*", "destination": "https://xhcpbdhdasajtlfevkko.supabase.co/:path*" },
+    { "source": "/sbx/gjpbiiqkvzysmdpioexk/:path*", "destination": "https://gjpbiiqkvzysmdpioexk.supabase.co/:path*" }
+  ],
   "headers": [
     { "source": "/(.*)", "headers": [
       { "key": "X-Content-Type-Options", "value": "nosniff" },

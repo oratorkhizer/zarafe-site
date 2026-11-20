@@ -94,7 +94,7 @@ tr:hover td{background:#fbf8f2}
   var all = [], filter = 'all', q = '';
   var $ = function(s){return document.querySelector(s)};
   function api(action, body){
-    return fetch('https://xhcpbdhdasajtlfevkko.supabase.co/functions/v1/admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.assign({action:action,passcode:pass},body||{}))})
+    return fetch('/sbx/xhcpbdhdasajtlfevkko/functions/v1/admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.assign({action:action,passcode:pass},body||{}))})
       .then(function(r){return r.json().then(function(j){ if(!r.ok) throw new Error(j.error||'Error'); return j; });});
   }
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]});}
@@ -113,7 +113,7 @@ tr:hover td{background:#fbf8f2}
     if($('#go').dataset.mode==='set'){
       if(p.length<6) return $('#gate-err').textContent='At least 6 characters.';
       if(p!==$('#pw2').value) return $('#gate-err').textContent='Passcodes do not match.';
-      fetch('https://xhcpbdhdasajtlfevkko.supabase.co/functions/v1/admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'set_passcode',passcode:p})}).then(function(r){return r.json()}).then(function(j){ if(j.error) throw new Error(j.error); pass=p; sessionStorage.setItem('z_pass',p); open(); }).catch(function(e){$('#gate-err').textContent=e.message;});
+      fetch('/sbx/xhcpbdhdasajtlfevkko/functions/v1/admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'set_passcode',passcode:p})}).then(function(r){return r.json()}).then(function(j){ if(j.error) throw new Error(j.error); pass=p; sessionStorage.setItem('z_pass',p); open(); }).catch(function(e){$('#gate-err').textContent=e.message;});
     } else {
       pass=p; api('login').then(function(){ sessionStorage.setItem('z_pass',p); open(); }).catch(function(e){ pass=''; $('#gate-err').textContent=e.message; });
     }
