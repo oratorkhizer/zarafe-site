@@ -52,7 +52,7 @@
     (guard ? guard.token() : Promise.resolve(''))
       .then(function (token) {
         data.turnstile = token;
-        return fetch('/sbx/xhcpbdhdasajtlfevkko/functions/v1/enquiry' /* through this site: some networks block supabase.co (vercel.json /sbx rewrite) */, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+        return fetch('https://xhcpbdhdasajtlfevkko.supabase.co/functions/v1/enquiry' /* through this site: some networks block supabase.co (vercel.json /sbx rewrite) */, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
       })
       .then(function (r) { if (guard) guard.reset(); return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (res) {
